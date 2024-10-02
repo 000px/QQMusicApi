@@ -7,7 +7,7 @@
     <a href="https://github.com/000px/QQMusicApi/tree/main?tab=MIT-1-ov-file">
         <img src="https://img.shields.io/github/license/000px/QQMusicApi" alt="GitHub license">
     </a>
-    <a href="https://github.com/luren-dc/QQMusicApi/stargazers">
+    <a href="https://github.com/000px/QQMusicApi/stargazers">
         <img src="https://img.shields.io/github/stars/000px/QQMusicApi?color=yellow&label=Github%20Stars" alt="STARS">
     </a>
 </div>
