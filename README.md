@@ -1,28 +1,44 @@
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+<div align="center">
+    <h1> QQMusicApi-Quart </h1>
+    <p> Python QQ音乐API封装库 Quart实现 </p>
+    <a href="https://www.python.org">
+        <img src="https://img.shields.io/badge/python-3.9+-blue" alt="Python">
+    </a>
+    <a href="https://github.com/000px/QQMusicApi/tree/main?tab=MIT-1-ov-file">
+        <img src="https://img.shields.io/github/license/000px/QQMusicApi" alt="GitHub license">
+    </a>
+    <a href="https://github.com/luren-dc/QQMusicApi/stargazers">
+        <img src="https://img.shields.io/github/stars/000px/QQMusicApi?color=yellow&label=Github%20Stars" alt="STARS">
+    </a>
+</div>
 
-# Flask + Vercel
+---
 
-This example shows how to use Flask 3 on Vercel with Serverless Functions using the [Python Runtime](https://vercel.com/docs/concepts/functions/serverless-functions/runtimes/python).
+> [!WARNING]
+> 本仓库的所有内容仅供学习和参考之用，禁止用于商业用途
 
-## Demo
+**原项目文档**: <a href="https://luren-dc.github.io/QQMusicApi" target="_blank">https://luren-dc.github.io/QQMusicApi</a>
 
-https://flask-python-template.vercel.app/
+**原项目源代码**: <a href="https://github.com/luren-dc/QQMusicApi" target="_blank">https://github.com/luren-dc/QQMusicApi</a>
 
-## How it Works
+## 介绍
 
-This example uses the Web Server Gateway Interface (WSGI) with Flask to enable handling requests on Vercel with Serverless Functions.
+使用类似flask但异步的web框架Quart，对[QQMusicApi](https://github.com/luren-dc/QQMusicApi) 的进一步封装。自己的机器人用，需求较少，只封装了非常基础的功能。
 
-## Running Locally
+## 依赖
+
+- [qqmusic-api-python](https://github.com/luren-dc/QQMusicApi)
+- [Quart](https://github.com/pallets/quart)
+
+## 快速上手
 
 ```bash
-npm i -g vercel
-vercel dev
+pip install -r requirements.txt
+...
 ```
 
-Your Flask application is now available at `http://localhost:3000`.
+### 使用
 
-## One-Click Deploy
+## Licence
 
-Deploy the example using [Vercel](https://vercel.com?utm_source=github&utm_medium=readme&utm_campaign=vercel-examples):
-
-[![Deploy with Vercel](https://vercel.com/button)](https://vercel.com/new/clone?repository-url=https%3A%2F%2Fgithub.com%2Fvercel%2Fexamples%2Ftree%2Fmain%2Fpython%2Fflask3&demo-title=Flask%203%20%2B%20Vercel&demo-description=Use%20Flask%203%20on%20Vercel%20with%20Serverless%20Functions%20using%20the%20Python%20Runtime.&demo-url=https%3A%2F%2Fflask3-python-template.vercel.app%2F&demo-image=https://assets.vercel.com/image/upload/v1669994156/random/flask.png)
+**[MIT License](https://github.com/000px/QQMusicApi?tab=MIT-1-ov-file)**
