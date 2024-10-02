@@ -2,6 +2,7 @@ import json
 from loguru import logger
 from os import path
 from quart import Quart, send_file, request, redirect, url_for, jsonify
+from quart_cors import cors
 from qqmusic_api import search, song
 from qqmusic_api.login import QRCodeLogin, QQLogin, WXLogin, PhoneLogin, refresh_cookies, Credential
 from io import BytesIO
@@ -11,6 +12,8 @@ from io import BytesIO
 from dataclasses import asdict
 
 app = Quart(__name__)
+# 添加 CORS 支持
+app = cors(app, allow_origin="*")
 pwd = path.dirname(__file__)
 pwdd = path.dirname(pwd)
 # 配置日志记录器
