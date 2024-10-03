@@ -2,4 +2,4 @@ quart==0.19.6
 quart-cors==0.7.0
 qqmusic-api-python==0.1.7
 loguru==0.7.2
-hypercorn 0.17.3
+hypercorn==0.17.3
