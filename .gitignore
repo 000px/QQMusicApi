@@ -11,4 +11,4 @@ ENV/
 env.bak/ 
 venv.bak/ 
 
-crendential.json
+credential.json
