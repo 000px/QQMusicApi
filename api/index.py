@@ -23,11 +23,18 @@ logger.add(f'{pwdd}/log/app.log', retention='5 days')
 qrcode_login: QRCodeLogin = None
 phone_login: PhoneLogin = None
 credential: Credential = None
-with open(f'{pwd}/credential.json', 'r', encoding='utf-8') as f:
-    try:
+# 尝试打开并读取credential.json文件中的内容
+try:
+    with open(f'{pwd}/credential.json', 'r', encoding='utf-8') as f:
         credential = Credential.from_cookies(json.load(f))
-    except Exception as e:
-        logger.error(e)
+except FileNotFoundError:
+    # 如果文件不存在，则创建新文件
+    with open(f'{pwd}/credential.json', 'w', encoding='utf-8') as f:
+        pass
+except json.JSONDecodeError as e:
+    # 如果文件内容为空或格式错误，记录错误信息
+    logger.error('credential.json 文件为空或格式错误')
+
 
 @app.route('/login')
 async def login():
