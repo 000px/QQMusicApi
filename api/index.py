@@ -163,7 +163,7 @@ async def getsong():
     try_url = await song.get_try_url(mid, vs)
     
     # 获取歌曲的播放URL
-    url = await s.get_url(credential=credential)
+    url = await s.get_url(credential=credential, file_type=song.SongFileType.MP3_320)
     
     # 记录日志，输出歌曲信息
     logger.info(f'name:{name}\nsinger:{singer}\ntry_url:{try_url}\nurl:{url}')
