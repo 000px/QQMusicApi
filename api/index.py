@@ -157,26 +157,26 @@ async def getsong():
     
     result = await search.search_by_type(keyword=song_name, search_type=search.SearchType.SONG, num=1)
     # 提取搜索结果中的歌曲信息
-    mid = result[0].get('mid', '')
-    _id = result[0].get('id', '')
-    name = result[0].get('name', '')
-    singer = result[0]['singer'][0].get('name', '')
+    song_mid: str = result[0].get('mid', '')
+    song_id: int = result[0].get('id', '')
+    song_name: str = result[0].get('name', '')
+    singer: str = result[0]['singer'][0].get('name', '')
     vs = result[0]['vs'][0]
-    
-    # 创建Song对象
-    s = song.Song(mid=mid, id=_id)
-    
+    album_mid: str = result[0]['album'].get('mid', '')
+    # 获取专辑图片的URL
+    album_url: str = f'https://y.qq.com/music/photo_new/T002R300x300M000{album_mid}.jpg'
+
     # 获取歌曲的试听URL
-    try_url = await song.get_try_url(mid, vs)
+    try_url = await song.get_try_url(song_mid, vs)
     
     # 获取歌曲的播放URL
-    url = await s.get_url(credential=credential, file_type=song.SongFileType.MP3_320)
+    url = (await song.get_song_urls([song_mid], song.SongFileType.MP3_320, credential))[song_mid]
     
-    # 记录日志，输出歌曲信息
-    logger.info(f'name:{name}\nsinger:{singer}\ntry_url:{try_url}\nurl:{url}')
+    # 记录日志
+    logger.info(f'name:{song_name}\nsinger:{singer}\ntry_url:{try_url}\nurl:{url}\nalbum_url:{album_url}')
     
     # 返回歌曲信息的JSON响应
-    return jsonify({'name': name, 'singer': singer, 'try_url': try_url, 'url': url})
+    return jsonify({'name': song_name, 'singer': singer, 'try_url': try_url, 'url': url, 'album_url': album_url})
 
 
 if __name__ == '__main__':
