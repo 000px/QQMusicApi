@@ -176,7 +176,7 @@ async def getsong():
     logger.info(f'name:{song_name}\nsinger:{singer}\ntry_url:{try_url}\nurl:{url}\nalbum_url:{album_url}')
     
     # 返回歌曲信息的JSON响应
-    return jsonify({'name': song_name, 'singer': singer, 'try_url': try_url, 'url': url, 'album_url': album_url})
+    return jsonify({'song_id': song_id, 'name': song_name, 'singer': singer, 'try_url': try_url, 'url': url, 'album_url': album_url})
 
 
 if __name__ == '__main__':
