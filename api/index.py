@@ -164,7 +164,7 @@ async def getsong():
     vs = result[0]['vs'][0]
     album_mid: str = result[0]['album'].get('mid', '')
     # 获取专辑图片的URL
-    album_url: str = f'https://y.qq.com/music/photo_new/T002R300x300M000{album_mid}.jpg'
+    # album_url: str = f'https://y.qq.com/music/photo_new/T002R300x300M000{album_mid}.jpg'
 
     # 获取歌曲的试听URL
     try_url = await song.get_try_url(song_mid, vs)
@@ -172,11 +172,20 @@ async def getsong():
     # 获取歌曲的播放URL
     url = (await song.get_song_urls([song_mid], song.SongFileType.MP3_320, credential))[song_mid]
     
-    # 记录日志
-    logger.info(f'name:{song_name}\nsinger:{singer}\ntry_url:{try_url}\nurl:{url}\nalbum_url:{album_url}')
+    data = {
+        'song_mid': song_mid,
+        'song_id': song_id, 
+        'name': song_name, 
+        'singer': singer,
+        'try_url': try_url, 
+        'url': url,
+        'album_mid': album_mid
+    }
     
+    # 记录日志
+    logger.info(data)
     # 返回歌曲信息的JSON响应
-    return jsonify({'song_mid': song_mid, 'song_id': song_id, 'name': song_name, 'singer': singer, 'try_url': try_url, 'url': url, 'album_url': album_url})
+    return jsonify(data)
 
 
 if __name__ == '__main__':
