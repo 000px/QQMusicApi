@@ -12,3 +12,4 @@ env.bak/
 venv.bak/ 
 
 credential.json
+.pdm-python
