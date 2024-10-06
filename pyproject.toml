@@ -1,0 +1,25 @@
+[project]
+name = "QQMusicApi"
+version = "0.1.0"
+description = "qqmusic api"
+authors = [
+    {name = "万万熊", email = "2281597772@qq.com"},
+]
+dependencies = [
+    "quart==0.19.6",
+    "quart-cors==0.7.0",
+    "qqmusic-api-python==0.1.7",
+    "loguru==0.7.2",
+    "hypercorn==0.17.3",
+]
+requires-python = ">=3.12"
+readme = "README.md"
+license = {text = "MIT"}
+
+[build-system]
+requires = ["pdm-backend"]
+build-backend = "pdm.backend"
+
+
+[tool.pdm]
+distribution = true
