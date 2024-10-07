@@ -40,8 +40,7 @@ async def qrshow():
     获取二维码图片。
 
     """
-    global qrcode_login
-    
+    global qrcode_login, phone_login
     # 如果未选择二维码登录方式，则返回错误信息
     if not qrcode_login:
         return jsonify({'state': 'error', 'message': '未选择登陆方式'})
