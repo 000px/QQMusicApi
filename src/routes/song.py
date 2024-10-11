@@ -34,7 +34,12 @@ async def getsong():
     try_url = await song.get_try_url(song_mid, vs)
     
     # 获取歌曲的播放URL
-    url = (await song.get_song_urls([song_mid], song.SongFileType.MP3_320, my_credential))[song_mid]
+    from qqmusic_api.exceptions import CredentialExpiredError
+    try:
+        url = (await song.get_song_urls([song_mid], song.SongFileType.MP3_320, my_credential))[song_mid]
+    except CredentialExpiredError as e:
+        logger.error(e)
+        url = ''
     
     data = {
         'song_mid': song_mid,
