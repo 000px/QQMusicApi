@@ -39,7 +39,10 @@ async def getsong():
         url = (await song.get_song_urls([song_mid], song.SongFileType.MP3_320, my_credential))[song_mid]
     except CredentialExpiredError as e:
         logger.error(e)
-        url = ''
+        if await my_credential.refresh():
+            url = (await song.get_song_urls([song_mid], song.SongFileType.MP3_320, my_credential))[song_mid]
+        else:
+            url = ''
     
     data = {
         'song_mid': song_mid,
