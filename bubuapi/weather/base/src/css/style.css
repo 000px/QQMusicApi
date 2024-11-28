@@ -1,0 +1,169 @@
+html, body, div, span, ul, li{
+    margin: 0;
+    padding: 0;
+	box-sizing: border-box;
+}
+@font-face {
+	font-family: 'AlimamaShuHeiTi-Bold';
+	src: url('./fonts/AlimamaShuHeiTi-Bold.woff2') format("woff2"),;
+}
+@font-face {
+	font-family: 'iconfont';
+	src: url('./fonts/iconfont.woff2') format('woff2');
+}
+body{
+	font-family: 'AlimamaShuHeiTi-Bold', 'iconfont';
+	background-color: #CCFFFF;
+	display: flex;
+	justify-content: center;
+}
+li{
+	list-style: none;
+}
+:root{
+	--weather-content-width: 1024px;
+	--weather-image-wh:200px;
+}
+#main{
+	display: flex;
+	flex-direction: column;
+	margin: 0 auto;
+	padding: 10px;
+}
+.weather-content{
+    width: var(--weather-content-width);
+	height: var(--weather-content-height);
+	float: left;
+	border-radius: 10px;
+	background-color: #66CCFF;
+}
+.weather-image{
+	width: var(--weather-image-wh);
+	height: var(--weather-image-wh);
+	margin: 10px 90px 0;
+	font-size: 160px;
+	color: aliceblue;
+}
+.weather-groundfloor{
+	display: flex;
+}
+.weather-c-right{
+	margin: 30px 90px 0 auto;
+	text-align: center;
+}
+.weather-city-date{
+	display: flex;
+	justify-content: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+.weather-city{
+	margin-left: 20px;
+	text-align: center;
+	font-size: 30px;
+	font-weight: bold;
+}
+.weather-temperature{
+	color: aliceblue;
+	font-size: 100px;
+	font-weight: bold;
+}
+.weather-forecast{
+	padding: 5px;
+	margin: 20px 50px;
+	border-radius: 15px;
+	background: rgb(240 248 255 / 30%);
+	display: grid;
+	grid-gap: 10px;
+}
+/* 高德 */
+.weather-forecast-amap{
+	grid-template-columns: repeat(2, 1fr);
+}
+.weather-forecast-qweather{
+	grid-template-columns: repeat(5, 1fr);
+}
+.weather-chunk{
+	margin: 0 10px;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	font-size: 15px;
+	font-weight: bold;
+	color: aliceblue;
+}
+.w-image{
+	font-size: 45px;
+}
+.xj-pressure{
+	width: 45px;
+	height: 60px;
+	background: no-repeat center/100% url('../image/dqy.svg');
+}
+.xj-visibility{
+	width: 45px;
+	height: 60px;
+	background: no-repeat center/100% url('../image/visibility.svg');
+}
+.xj-humidity{
+	width: 50px;
+	height: 50px;
+	background: no-repeat center/100% url('../image/humidity.svg');
+}
+.PM2-5-2-Outlined {
+	width: 50px;
+	height: 50px;
+	background: no-repeat center/100% url('../image/PM2.5-2-Outlined.svg');
+}
+.weather-time{
+	text-align: right;
+	color: #eee;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 10px 25px;
+}
+.wind-image{
+	width: 50px;
+	height: 50px;
+	background: no-repeat center/100% url('../image/wind.svg');
+}
+.wind-data span{
+	padding-left: 10px;
+}
+
+.weather-list{
+	color: #eee;
+	margin-top: 10px;
+	border-radius: 15px;
+	background-color: #99CCFF;
+}
+.weather-list li{
+	display: flex;
+	border-radius: 15px;
+	margin: 10px;
+}
+.weather-list-day{
+	font-weight: bold;
+	margin: 0 50px;
+	text-align: center;
+}
+.weather-list-week{
+	font-size: 30px;
+}
+.weather-list-date{
+	font-size: 16px;
+}
+.weather-list-image{
+	width: 50px;
+	font-size: 40px;
+	margin: 0 auto;
+}
+.weather-list-show{
+	width: 150px;
+	font-size: 23px;
+	margin: 10px 50px;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
