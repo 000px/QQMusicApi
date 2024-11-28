@@ -10,8 +10,8 @@ dependencies = [
     "quart-cors==0.7.0",
     "qqmusic-api-python==0.1.8",
     "loguru==0.7.2",
-    "hypercorn==0.17.3",
     "playwright>=1.48.0",
+    "uvicorn>=0.32.1",
 ]
 requires-python = "<3.13,>=3.12"
 readme = "README.md"

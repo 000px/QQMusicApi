@@ -31,6 +31,12 @@ import threading
 threading.Thread(target=check_credential_state, daemon=True).start()    
 
 if __name__ == '__main__':
-    app.run(host='0.0.0.0', port=5000)
+    # app.run(host='0.0.0.0', port=5000)
+    import uvicorn
+    uvicorn.run(
+        app,
+        host="0.0.0.0",
+        port=8000,
+        log_level="info")
     # pdm run hypercorn run:app
     # pdm run hypercorn -b 0.0.0.0:8000 run:app
