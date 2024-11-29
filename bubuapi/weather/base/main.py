@@ -23,7 +23,7 @@ def weather_html(data, data_type: str):
         time=data['base']["obsTime"],
         forecast=data['base']["blockdata"],
         lis=data["all"])
-    with open(Path(__file__).resolve().parent / f"src/output{randint(0, 100)}.html", "w+", encoding="utf-8") as file:
+    with open(Path(__file__).resolve().parent / f"src/output{randint(0, 800)}.html", "w+", encoding="utf-8") as file:
         file.write(rendered_template)
     return "200"
 
