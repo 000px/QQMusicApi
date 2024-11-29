@@ -89,7 +89,7 @@ async def _get_qrcode_state():
             # 登录成功后，获取凭证并保存到文件中
             my_credential: Credential = await qrcode_login.authorize()
             current_app.config['my_credential'] = my_credential
-            with open('src/credential.json', 'w', encoding='utf-8') as f:
+            with open('bubuapi/qqmusic/credential.json', 'w', encoding='utf-8') as f:
                 from json import dump
                 dump(my_credential.as_dict(), f, ensure_ascii=False, indent=4)
             message = "登录成功"
